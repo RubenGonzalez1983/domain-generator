@@ -7,10 +7,10 @@ import "./assets/img/4geeks.ico";
 function generateLi(domain) {
   return "<LI>" + domain + "</LI>";
 }
-let pronoun = ["the", "our"];
-let adj = ["great", "big"];
-let noun = ["jogger", "racoon"];
-let extension = [".com", ".net", ".io", ".us"];
+let pronoun = ["the", "our", "your"];
+let adj = ["angry", "amazing", "invincible", "superboring"];
+let noun = ["wizaaaaaard", "liontamer", "raccoonwhisperer"];
+let extension = [".com", ".net", ".io", ".gov"];
 
 function generateDomains(pronounArr, adjArr, NounArr) {
   let storageArr = [];
