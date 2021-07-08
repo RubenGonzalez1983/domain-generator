@@ -4,35 +4,27 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-function generateLi(domain) {
-  return "<LI>" + domain + "</LI>";
-}
-let pronoun = ["the", "our", "your"];
-let adj = ["angry", "amazing", "invincible", "superboring"];
-let noun = ["wizaaaaaard", "liontamer", "raccoonwhisperer"];
-let extension = [".com", ".net", ".io", ".gov"];
 
-function generateDomains(pronounArr, adjArr, NounArr) {
-  let storageArr = [];
+window.onload = function() {
+  function generateDomain() {
+    let pronoun = ["my", "your", "our"];
+    let adj = ["invincible", "flying", "holographic"];
+    let noun = ["wizard", "possum", "joggler"];
+    let extension = [".com", ".io", ".net"];
 
-  for (let i = 0; i < pronounArr.length; i++) {
-    for (let j = 0; j < adjArr.length; j++) {
-      for (let k = 0; k < NounArr.length; k++) {
-        //for (let e = 0; e < extensionArr.length; e++) {
-        storageArr.push(pronounArr[i] + adjArr[j] + NounArr[k]);
-        //}
+    let myArray = [];
+
+    for (let p = 0; p < pronoun.length; p++) {
+      for (let a = 0; a < adj.length; a++) {
+        for (let n = 0; n < noun.length; n++) {
+          for (let e = 0; e < extension.length; e++) {
+            myArray.push(pronoun[p] + adj[a] + noun[n] + extension[e]);
+          }
+        }
       }
     }
+    return myArray;
   }
-  let arrayOfLiTags = storageArr.map(function(item, index) {
-    return generateLi(item);
-  });
-  let result = arrayOfLiTags.join("");
-  return result;
-}
-window.onload = function() {
-  const unorderedList = document.getElementById("list-of-domains");
-  unorderedList.innerHTML = generateDomains(pronoun, adj, noun);
 
-  console.log("Hello Rigo from the console!");
+  document.getElementById("list-of-domains").innerHTML = generateDomain();
 };
